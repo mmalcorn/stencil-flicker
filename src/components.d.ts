@@ -23,13 +23,119 @@ declare global {
   interface HTMLAttributes {}
 }
 
+import '@stencil/router';
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppHero {
+      'backgroundUrl': string;
+      'hideLink': boolean;
+      'linkUrl': string;
+      'textNoWrap': boolean;
+    }
+  }
+
+  interface HTMLAppHeroElement extends StencilComponents.AppHero, HTMLStencilElement {}
+
+  var HTMLAppHeroElement: {
+    prototype: HTMLAppHeroElement;
+    new (): HTMLAppHeroElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-hero': HTMLAppHeroElement;
+  }
+  interface ElementTagNameMap {
+    'app-hero': HTMLAppHeroElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-hero': JSXElements.AppHeroAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppHeroAttributes extends HTMLAttributes {
+      'backgroundUrl'?: string;
+      'hideLink'?: boolean;
+      'linkUrl'?: string;
+      'textNoWrap'?: boolean;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppAbout {
+
+    }
+  }
+
+  interface HTMLAppAboutElement extends StencilComponents.AppAbout, HTMLStencilElement {}
+
+  var HTMLAppAboutElement: {
+    prototype: HTMLAppAboutElement;
+    new (): HTMLAppAboutElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-about': HTMLAppAboutElement;
+  }
+  interface ElementTagNameMap {
+    'app-about': HTMLAppAboutElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-about': JSXElements.AppAboutAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppAboutAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppHome {
+
+    }
+  }
+
+  interface HTMLAppHomeElement extends StencilComponents.AppHome, HTMLStencilElement {}
+
+  var HTMLAppHomeElement: {
+    prototype: HTMLAppHomeElement;
+    new (): HTMLAppHomeElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-home': HTMLAppHomeElement;
+  }
+  interface ElementTagNameMap {
+    'app-home': HTMLAppHomeElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-home': JSXElements.AppHomeAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppHomeAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
 
 declare global {
 
   namespace StencilComponents {
     interface MyComponent {
-      'first': string;
-      'last': string;
+
     }
   }
 
@@ -52,8 +158,7 @@ declare global {
   }
   namespace JSXElements {
     export interface MyComponentAttributes extends HTMLAttributes {
-      'first'?: string;
-      'last'?: string;
+
     }
   }
 }
