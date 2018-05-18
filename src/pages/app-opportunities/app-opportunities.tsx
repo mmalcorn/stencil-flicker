@@ -1,8 +1,7 @@
 import { Component } from '@stencil/core';
 
 @Component({
-  tag: 'app-opportunities',
-  styleUrl: 'app-opportunities.scss',
+  tag: 'app-opportunities'
 })
 export class AppOpportunities {
 
