@@ -25,15 +25,15 @@ declare global {
 
 import '@stencil/router';
 
+import {
+  ActiveRouter,
+} from '@stencil/router';
 
 declare global {
 
   namespace StencilComponents {
     interface AppHero {
-      'backgroundUrl': string;
-      'hideLink': boolean;
       'linkUrl': string;
-      'textNoWrap': boolean;
     }
   }
 
@@ -56,10 +56,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppHeroAttributes extends HTMLAttributes {
-      'backgroundUrl'?: string;
-      'hideLink'?: boolean;
       'linkUrl'?: string;
-      'textNoWrap'?: boolean;
     }
   }
 }
@@ -134,8 +131,41 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface MyComponent {
+    interface AppOpportunities {
 
+    }
+  }
+
+  interface HTMLAppOpportunitiesElement extends StencilComponents.AppOpportunities, HTMLStencilElement {}
+
+  var HTMLAppOpportunitiesElement: {
+    prototype: HTMLAppOpportunitiesElement;
+    new (): HTMLAppOpportunitiesElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-opportunities': HTMLAppOpportunitiesElement;
+  }
+  interface ElementTagNameMap {
+    'app-opportunities': HTMLAppOpportunitiesElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-opportunities': JSXElements.AppOpportunitiesAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppOpportunitiesAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface MyComponent {
+      'activeRouter': ActiveRouter;
     }
   }
 
@@ -158,7 +188,7 @@ declare global {
   }
   namespace JSXElements {
     export interface MyComponentAttributes extends HTMLAttributes {
-
+      'activeRouter'?: ActiveRouter;
     }
   }
 }

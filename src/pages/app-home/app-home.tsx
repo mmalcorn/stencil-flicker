@@ -1,8 +1,7 @@
 import { Component } from '@stencil/core';
 
 @Component({
-  tag: 'app-home',
-  // styleUrl: 'app-about.scss',
+  tag: 'app-home'
 })
 export class AppHome {
 
@@ -11,7 +10,6 @@ export class AppHome {
       <div>
         <app-hero
           link-url="mailto:hello@openforge.io"
-          background-url="assets/bg-hero-mountain.jpg"
         >
           <span slot="header">We are thinkers, makers &amp; doers</span>
           <span slot="body">
@@ -22,7 +20,6 @@ export class AppHome {
           <span slot="link">Learn More</span>
         </app-hero>
 
-        {/* section - approach */}
         <section id="approach">
           <div class="container">
             <h2>
@@ -30,10 +27,8 @@ export class AppHome {
               We use the latest technology to build your business. Let's show
               you how!
             </h2>
-
-            <div class="row">
-              <div class="content col-sm-12 col-md-4">
-                <i class="fa fa-comment-o" aria-hidden="true" />
+            <div>
+              <div>
                 <h3>
                   <span class="small">First </span>Consulting
                 </h3>
@@ -43,8 +38,7 @@ export class AppHome {
                   group sessions.
                 </p>
               </div>
-              <div class="content col-sm-12 col-md-4">
-                <i class="fa fa-smile-o" aria-hidden="true" />
+              <div>
                 <h3>
                   <span class="small">Second </span>User experience Design
                 </h3>
@@ -54,8 +48,7 @@ export class AppHome {
                   we're here to help.
                 </p>
               </div>
-              <div class="content col-sm-12 col-md-4">
-                <i class="fa fa-code" aria-hidden="true" />
+              <div>
                 <h3>
                   <span class="small">Third </span>Development
                 </h3>

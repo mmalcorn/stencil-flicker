@@ -6,41 +6,27 @@ import { Component, Prop } from '@stencil/core';
 })
 export class AppHero {
   @Prop() linkUrl: string;
-  @Prop() backgroundUrl: string;
-  @Prop() textNoWrap: boolean;
-  @Prop() hideLink: boolean;
-
-  componentDidLoad() {
-    const element = document.querySelector('header.hero') as HTMLElement;
-    element.style.backgroundImage = `url('${this.backgroundUrl}')`;
-  }
 
   render() {
     return (
       <header class="hero">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-sm-12 col-md-8 col-lg-6">
-              <h2
-                class={{
-                  'text-nowrap': this.textNoWrap,
-                }}
-              >
+        <div>
+          <div>
+            <div>
+              <h2>
                 <slot name="header" />
               </h2>
 
               <p>
                 <slot name="body" />
               </p>
-              {!this.hideLink ? (
-                <a href={this.linkUrl} class="btn btn-primary" target="_blank">
-                  <slot name="link" />
-                </a>
-              ) : null}
+              <a href={this.linkUrl} class="btn btn-primary" target="_blank">
+                <slot name="link" />
+              </a>
             </div>
           </div>
         </div>
       </header>
-    );
+    )
   }
 }
